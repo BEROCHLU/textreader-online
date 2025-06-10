@@ -25,3 +25,13 @@ $(document).ready(function () {
         $(this).find('.row-number').text(index);
     });
 });
+
+// 表示切替トグル
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const row = e.target.closest('tr');
+        const cell = row.querySelector('.english-cell');
+        cell.classList.toggle('visible');
+        e.target.textContent = cell.classList.contains('visible') ? '非表示' : '表示';
+    });
+});
