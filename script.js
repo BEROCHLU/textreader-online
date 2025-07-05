@@ -20,9 +20,10 @@ $('#table_speaker').on('click', '.speaker', function () {
 // ページロード時の処理
 $(document).ready(function () {
     // 番号を自動で振る
-    $('#table_speaker tbody tr').each(function (index) {
-        if (index === 0) return; // ヘッダー行はスキップ
-        $(this).find('.row-number').text(index);
+    $('.row-number').each(function (index) {
+        const val = $(this).text();
+        if (val) return; // なんか入ってたらスキップ
+        $(this).text(index + 1);
     });
 });
 

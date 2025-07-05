@@ -1,11 +1,10 @@
 body {
-    font-size: 12px;
     color: #333;
     background: #fff
 }
 
 table {
-    font-size: 12px;
+    font-size: 11px;
     word-break: break-all;
     text-align: left;
     border-collapse: separate
@@ -116,9 +115,8 @@ tr>td:nth-child(1) {
     color: #000;
 }
 
-.highlighted {
-    color: #000;
-    background-color: yellow;
+th:nth-of-type(1) {
+    width: 12px;
 }
 
 /* --- レスポンシブ対応 --- */
