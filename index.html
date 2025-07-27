@@ -55,8 +55,13 @@
             flex: 1;
         }
 
-        button {
+        .button-row {
+            display: flex;
+            gap: 0.5rem;
             margin-top: 0.5rem;
+        }
+
+        button {
             padding: 0.75rem 1.5rem;
             font-size: 1.25rem;
             border: none;
@@ -83,11 +88,17 @@
             <input type="range" id="rate-slider" min="35" max="135" step="5" value="70">
             <span id="rate-value">70</span>
         </div>
-        <button id="play-btn">▶️ Read Aloud</button>
+        <div class="button-row">
+            <button id="play-btn">▶️ Read Aloud</button>
+            <button id="stop-btn">⏹️ Stop</button>
+            <button id="clearBtn">🗑️ Clear Text</button>
+        </div>
     </div>
 
     <script>
-        const button = document.getElementById('play-btn');
+        const playBtn = document.getElementById('play-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        const clearBtn = document.getElementById('clearBtn');
         const textarea = document.getElementById('text-input');
         const rateSlider = document.getElementById('rate-slider');
         const rateValue = document.getElementById('rate-value');
@@ -97,19 +108,27 @@
             rateValue.textContent = parseInt(rateSlider.value).toFixed(0);
         });
 
-        button.addEventListener('click', () => {
+        playBtn.addEventListener('click', () => {
             const text = textarea.value.trim();
             if (!text) return;
 
-            // Cancel any ongoing utterances
             window.speechSynthesis.cancel();
-
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'en-US';
-            utterance.rate = parseFloat(rateSlider.value/100);
+            utterance.rate = parseFloat(rateSlider.value / 100);
             utterance.pitch = 1;
-
             window.speechSynthesis.speak(utterance);
+        });
+
+        stopBtn.addEventListener('click', () => {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
+                window.speechSynthesis.cancel();
+            }
+        });
+
+        clearBtn.addEventListener('click', () => {
+            textarea.value = '';
+            textarea.focus();
         });
 
         // Stop speech on page unload
@@ -117,6 +136,7 @@
             window.speechSynthesis.cancel();
         });
     </script>
+
 </body>
 
 </html>
