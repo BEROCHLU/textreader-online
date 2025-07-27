@@ -1,183 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Duo 3.0 speak En</title>
-    <link rel="icon" sizes="32x32" href="./favicon.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Reader</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f5f5f5;
+            padding: 1rem;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            padding: 1rem;
+            font-size: 1.25rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            resize: vertical;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .slider-container label {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .slider-container input[type="range"] {
+            flex: 1;
+        }
+
+        button {
+            margin-top: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.25rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="page">
-        <div id="content">
-            <div class="sect">
-                <table id="table_speaker">
-                    <tbody>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">-</th>
-                            <th scope="col">日本語</th>
-                            <th scope="col">English</th>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">私たちは個人の意志を尊重しなければならない。</td>
-                            <td class="en">We must respect the will of the individual</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">気楽にしな。すべてがうまくいくと私は保証できる。</td>
-                            <td class="en">Take it easy. I can assure you that everything will turn out fine.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">人生への否定的な見方を手放して、常に前向きな態度を保ちなさい。</td>
-                            <td class="en">Let go of your negative outlook on life, always maintain a positive attitude.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">あなたは、出身国・性別・信条に関係なく、すべての人に公平であるべきだ。</td>
-                            <td class="en">You should be fair to everyone regardless of national origin, gender, or creed.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">平等は憲法によって保証されている。</td>
-                            <td class="en">Equality is guaranteed by the constitution.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">彼は柱にもたれかかり、自由の女神をじっと見つめた。</td>
-                            <td class="en">He leaned against the pillar and gazed at the Statue of Liberty.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">女性が私のそばを通り過ぎて、ほのかな香水の香りを放っていた。それは私に元カノを思い出させた。</td>
-                            <td class="en">A woman passed by me giving off a subtle scent of perfume. It reminded me of my ex-girlfriend.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">納豆はひどいにおいがするが、味はとても良い。</td>
-                            <td class="en">Natto smells awful, but tastes terrific.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">「汗でびしょぬれだ。」「下がれ！お前はくさい。シャワーを浴びろ！」</td>
-                            <td class="en">"I'm soaked with sweat." "Stand Back! You stink. Take a shower!"</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">ボブはあまりにも取り乱していて、事実と作り話をほとんど区別できなかった。</td>
-                            <td class="en">Bob was so beside himself that he could scarcely tell fact from fiction.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">彼の新しい小説は、散文と彼の詩の才能を組み合わせたもので、出版される予定だ。</td>
-                            <td class="en">His new novel, which combines prose with his gift for poetry, is going to be published.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">来月、百科事典の最新版が出る。</td>
-                            <td class="en">An up-to-date edition of the encyclopedia will come out next month.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">山田さんはその魅力的なおとぎ話を平易な日本語に翻訳した。</td>
-                            <td class="en">Ms. Yamada translated the fascinating fairy tale into plain Japanese.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">以下の一節は有名な寓話から引用されたものです。</td>
-                            <td class="en">The following passage is quoted from a well-known fable.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">「現代文学に詳しいですか？」「ほとんど知りません。」</td>
-                            <td class="en">"Are you familiar with contemporary literature?" "I know next to nothing about it."</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">時々私は "curve" と "carve" を混同してしまう。</td>
-                            <td class="en">At times I confuse "curve" with "carve".</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">恥ずかしがらないで。あなたの発音はだいたい合っています。</td>
-                            <td class="en">Don't be shy. Your pronunciation is more or less correct.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">この記事には語彙力を増やしたいと熱望する人々へのヒントが載っています。</td>
-                            <td class="en">This article contains tips for those who are eager to increase their vocabulary.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">彼の最新作が市庁舎で展示されています。それらは言葉では表せないほど素晴らしいです。</td>
-                            <td class="en">His latest works are on display at the city hall. They are fabulous beyond description.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">少し詰めていただけますか？「あ、ごめんなさい。こんなに場所を取っているとは気づきませんでした。」</td>
-                            <td class="en">Could you move over a little? "Oh, sorry. I didn't realize I was taking up so much space."</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">「この醜い物体は何？」「これは抽象芸術の作品だよ！」</td>
-                            <td class="en">"What's this ugly object?" "This is a piece of abstract art!"</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">私はリッチーに100ドル貸してくれるよう懇願したが、彼は首を横に振って「僕も金欠なんだ」と言った。</td>
-                            <td class="en">I begged Richie to lend me a hundred bucks, but he shook his head, saying, "I'm broke, too."</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">「私はセール品を見ると衝動買いしてしまいがちだ。」「私もだよ。」</td>
-                            <td class="en">"I'm apt to buy things on impulse whenever something is on sale." "So am I."</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">実際のところ、普通の人々にはそんな贅沢品を購入する余裕はない。</td>
-                            <td class="en">As it is, ordinary people cannot afford to purchase such luxuries.</td>
-                        </tr>
-                        <tr>
-                            <td class="row-number"></td>
-                            <td><button class="speaker">🔊</button></td>
-                            <td class="jp">予想していた通り、失業率は3四半期連続で上昇した。</td>
-                            <td class="en">As we anticipated, the unemployment rate has risen three quarters in a row.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="right"><a href="#top">このページのトップへ</a></p>
-            </div>
+    <textarea id="text-input" placeholder="Enter English text here..."></textarea>
+
+    <div class="controls">
+        <div class="slider-container">
+            <label for="rate-slider">Speed:</label>
+            <input type="range" id="rate-slider" min="0.5" max="2" step="0.1" value="1">
+            <span id="rate-value">1.0</span>
         </div>
+        <button id="play-btn">▶️ Read Aloud</button>
     </div>
-    <script src="./script.js"></script>
+
+    <script>
+        const button = document.getElementById('play-btn');
+        const textarea = document.getElementById('text-input');
+        const rateSlider = document.getElementById('rate-slider');
+        const rateValue = document.getElementById('rate-value');
+
+        // Update displayed rate value when slider moves
+        rateSlider.addEventListener('input', () => {
+            rateValue.textContent = parseFloat(rateSlider.value).toFixed(1);
+        });
+
+        button.addEventListener('click', () => {
+            const text = textarea.value.trim();
+            if (!text) return;
+
+            // Cancel any ongoing utterances
+            window.speechSynthesis.cancel();
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = parseFloat(rateSlider.value);
+            utterance.pitch = 1;
+
+            window.speechSynthesis.speak(utterance);
+        });
+
+        // Stop speech on page unload
+        window.addEventListener('beforeunload', () => {
+            window.speechSynthesis.cancel();
+        });
+    </script>
 </body>
 
 </html>
