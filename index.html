@@ -76,6 +76,28 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            textarea {
+                height: 200px;
+                font-size: 1rem;
+            }
+
+            .slider-container label {
+                font-size: 0.9rem;
+            }
+
+            .button-row {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .button-row button {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
