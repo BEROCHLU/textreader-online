@@ -1,45 +1,33 @@
-# Text Reader
+# TextReader Online
 
-A simple web application for reading out loud English text using your browser's Speech Synthesis API. Easily control reading speed, clear the text, and enjoy a clean, responsive interface.
+A simple web app that reads aloud English text entered by the user, with adjustable speed, stop, and clear features. Works on both desktop and mobile browsers.
 
 ## Features
 
-- Input English text and click the **Read Aloud** button to hear it spoken.
-- Adjust the reading speed with an intuitive slider (range: 35–135, default: 70).
-- Stop the speech at any time with the **Stop** button.
-- Quickly clear the text area with the **Clear Text** button.
-- User-friendly and mobile-responsive design.
+- Enter English text and read it aloud with one click
+- Adjustable reading speed with a slider
+- Stop and clear buttons
+- Responsive design for PC and mobile
 
-## Usage
+## How to Use
 
-1. Download or clone the repository.
-2. Open `index.html` in your web browser.
-3. Type English text in the textarea.
-4. Adjust the reading speed using the **Speed:** slider as needed.
-5. Click the **Read Aloud** (▶️) button to start reading.
-6. Press **Stop** (⏹️) to halt the speech.
-7. Use **Clear Text** (🗑️) to remove all text from the textarea.
+1. Open `index.html` in your web browser, or visit the deployed app:
+   - **[TextReader Online](http://pleasecov.g2.xrea.com/duo/index.html)**
+2. Enter any English text in the textarea
+3. Click the **Read Aloud (▶️)** button to start speech
+4. Adjust the speed slider as needed
+5. Use the **Stop (⏹️)** button to stop speech, and **Clear Text (🗑️)** to erase the textarea
+
+## Requirements
+
+- Modern web browser (Chrome, Edge, Firefox, Safari, etc.)
+- Works on both desktop and mobile devices
 
 ## Notes
 
-- SpeechSynthesis API support may vary by browser. Recommended browsers: latest versions of Google Chrome, Microsoft Edge, or Firefox.
-- For best results, use English text. Pronunciation may not be accurate for other languages.
+- Speech synthesis depends on your device and browser. If it does not work, try a different browser.
 
-## Files
+## Demo URL
 
-- `index.html`  
-  The main HTML file. All JavaScript and CSS are included inline.
-
-## Customization
-
-- Free to modify and extend as you like. Feel free to adapt for your needs.
-
----
-
-Author: [Your Name or GitHub ID]  
-License: MIT (edit as appropriate)
-
----
-
-Replace the "Author" and "License" sections with your own information as needed.
+- http://pleasecov.g2.xrea.com/duo/index.html
 
