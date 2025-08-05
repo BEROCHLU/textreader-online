@@ -11,8 +11,7 @@ A simple web app that reads aloud English text entered by the user, with adjusta
 
 ## How to Use
 
-1. Open `index.html` in your web browser, or visit the deployed app:
-   - **[TextReader Online](http://pleasecov.g2.xrea.com/tts/)**
+1. Open `index.html` in your web browser
 2. Enter any English text in the textarea
 3. Click the **Read Aloud (▶️)** button to start speech
 4. Adjust the speed slider as needed
