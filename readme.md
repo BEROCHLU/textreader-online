@@ -1,33 +1,33 @@
 # TextReader Online
 
-A simple web app that reads aloud English text entered by the user, with adjustable speed, stop, and clear features. Works on both desktop and mobile browsers.
+TextReader Online is a simple web application that reads English text aloud using your browser's Speech Synthesis API. You can adjust the reading speed and clear the text easily.
 
 ## Features
 
-- Enter English text and read it aloud with one click
-- Adjustable reading speed with a slider
-- Stop and clear buttons
-- Responsive design for PC and mobile
+- Read aloud any entered English text with a single click
+- Adjustable reading speed via a slider
+- Stop reading or clear the text at any time
+- Responsive design for smartphones and tablets
 
-## How to Use
+## Usage
 
-1. Open `index.html` in your web browser
-2. Enter any English text in the textarea
-3. Click the **Read Aloud (▶️)** button to start speech
-4. Adjust the speed slider as needed
-5. Use the **Stop (⏹️)** button to stop speech, and **Clear Text (🗑️)** to erase the textarea
+1. Download or clone this repository.
+2. Open `index.html` with your web browser (Chrome, Edge, Firefox, etc.).
+3. Enter English text in the textarea.
+4. Click the [▶️ Read Aloud] button to start reading.
+5. Adjust the [Speed] slider to change the reading speed.
+6. Use the [⏹️ Stop] button to stop reading, or the [🗑️ Clear Text] button to clear the textarea.
 
 ## Requirements
 
-- Modern web browser (Chrome, Edge, Firefox, Safari, etc.)
-- Works on both desktop and mobile devices
+- A modern web browser that supports the Speech Synthesis API.
 
 ## Notes
 
-- Speech synthesis depends on your device and browser. If it does not work, try a different browser.
-- **Currently, speech synthesis is _not supported_ on Linux in most browsers.**  
-  On Linux, the app may run but no sound will be produced when using the Read Aloud feature.
+- This application uses the browser's Speech Synthesis API for text-to-speech functionality.
+- **On Linux, many browsers (such as Google Chrome and Firefox) do not support window.speechSynthesis, so the text-to-speech feature may not work properly.**
+- The application generally works on Windows and macOS, but support may vary depending on your browser and OS version.
 
-## Demo URL
+## License
 
-- http://pleasecov.g2.xrea.com/tts/
+MIT License
