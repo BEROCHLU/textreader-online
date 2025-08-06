@@ -25,8 +25,9 @@ A simple web app that reads aloud English text entered by the user, with adjusta
 ## Notes
 
 - Speech synthesis depends on your device and browser. If it does not work, try a different browser.
+- **Currently, speech synthesis is _not supported_ on Linux in most browsers.**  
+  On Linux, the app may run but no sound will be produced when using the Read Aloud feature.
 
 ## Demo URL
 
 - http://pleasecov.g2.xrea.com/tts/
-
