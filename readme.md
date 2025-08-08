@@ -6,6 +6,7 @@ TextReader Online is a simple web application that reads English text aloud usin
 
 - Read aloud any entered English text with a single click
 - Adjustable reading speed via a slider
+- Remembers the last used reading speed using your browser's localStorage
 - Stop reading or clear the text at any time
 - Responsive design for smartphones and tablets
 
@@ -15,7 +16,8 @@ TextReader Online is a simple web application that reads English text aloud usin
 2. Open `index.html` with your web browser (Chrome, Edge, Firefox, etc.).
 3. Enter English text in the textarea.
 4. Click the [▶️ Read Aloud] button to start reading.
-5. Adjust the [Speed] slider to change the reading speed.
+5. Adjust the [Speed] slider to change the reading speed.  
+   The chosen speed will be saved automatically and restored the next time you open the page.
 6. Use the [⏹️ Stop] button to stop reading, or the [🗑️ Clear Text] button to clear the textarea.
 
 ## Requirements
@@ -25,6 +27,7 @@ TextReader Online is a simple web application that reads English text aloud usin
 ## Notes
 
 - This application uses the browser's Speech Synthesis API for text-to-speech functionality.
+- The application stores the speed setting in localStorage. Clearing your browser's site data will reset it to the default value.
 - **On Linux, many browsers (such as Google Chrome and Firefox) do not support window.speechSynthesis, so the text-to-speech feature may not work properly.**
 - The application generally works on Windows and macOS, but support may vary depending on your browser and OS version.
 
