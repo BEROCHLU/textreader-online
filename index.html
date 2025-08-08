@@ -113,16 +113,13 @@
             <span id="rate-value">65</span>
         </div>
         <div class="button-row">
-            <button id="play-btn">▶️ Read Aloud</button>
-            <button id="stop-btn">⏹️ Stop</button>
-            <button id="clearBtn">🗑️ Clear Text</button>
+            <button id="playButton">▶️ Read Aloud</button>
+            <button id="stopButton">⏹️ Stop</button>
+            <button id="clearButton">🗑️ Clear Text</button>
         </div>
     </div>
 
     <script>
-        const playBtn = document.getElementById('play-btn');
-        const stopBtn = document.getElementById('stop-btn');
-        const clearBtn = document.getElementById('clearBtn');
         const textarea = document.getElementById('text-input');
         const rateSlider = document.getElementById('rate-slider');
         const rateValue = document.getElementById('rate-value');
@@ -132,11 +129,12 @@
             rateValue.textContent = parseInt(rateSlider.value).toFixed(0);
         });
 
-        playBtn.addEventListener('click', () => {
+        playButton.addEventListener('click', () => {
             const text = textarea.value.trim();
             if (!text) return;
 
             window.speechSynthesis.cancel();
+
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'en-US';
             utterance.rate = parseFloat(rateSlider.value / 100);
@@ -144,13 +142,13 @@
             window.speechSynthesis.speak(utterance);
         });
 
-        stopBtn.addEventListener('click', () => {
+        stopButton.addEventListener('click', () => {
             if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
                 window.speechSynthesis.cancel();
             }
         });
 
-        clearBtn.addEventListener('click', () => {
+        clearButton.addEventListener('click', () => {
             textarea.value = '';
             textarea.focus();
         });
